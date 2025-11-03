@@ -24,6 +24,10 @@ Dentro de estos sectores podemos encontrar algunas de las empresas más grandes 
 
 <br>
 
+![Presentation1](https://github.com/user-attachments/assets/45a57fab-f9a4-46f1-a5dc-2e35fd23fd1d)
+
+<br>
+
 Aunque una estrategia de inversión consiste en mantener una inversión diversificada, en algunas ocasiones los sectores del mercado presentan mejores oportunidades de inversión que el mercado en general, o incluso algunas acciones individuales dentro de un sector pueden llegar a representar una mejor inversión que todo el conjunto. Pero la tarea de encontrar acciones cuyos precios llegan a tener rendimientos tanto por encima o por debajo del rendimiento del mercado, se vuelve complicada al tener 500 empresas. Es por esto que comenzar con el análisis sectorial del S&P 500, puede permitir reconocer tendencias a un nivel intermedio; no general como el índice, ni particular como una acción individual. Entonces, al analizar un sector, se puede tener una mejor visión del movimiento del mercado accionario estadounidense, para posteriormente analizar el sector y ver qué acciones presentan comportamientos atípicos (*outliers*). 
 
 De esta forma, el presente código tiene como objetivo servir como una herramienta de análisis de los sectores del mercado, con la posibilidad de calcular tanto el rendimiento en un periodo dado de los ETF y acciones, así como calcular el Sharpe Ratio y el Sortino Ratio, indicadores financieros que brindan más información de la relación riesgo-beneficio de un instrumento financiero. Además, entre las funciones del código se puede calcular las medias móviles (SMA y EMA), indicadores técnicos básicos que se utilizan para identificar tendencias y posibles señales de compra/venta. Finalmente, como complemento para el análisis sectorial, se puede graficar un mapa térmico de correlaciones.
@@ -32,7 +36,6 @@ En conclusión, esta herramienta tiene la intención de servir como un radar o m
 
 <br>
 
-*Nota: El ambiente de programación utilizado para este trabajo fue Jupyter Notebook.*
 
 ---
 
@@ -46,10 +49,12 @@ Ejemplo de una gráfica generada con el código: Rendimiento en lo que val del a
 
 ---
 
-# **Funciones del Código**   :open_file_folder:
+# **Estrucutra del Código**   :open_file_folder:
 Este  código está compuesto por tres secciones. En la primera sección se muestra el rendimiento de los ETFs del S&P 500 con una gráfica de barras horizontales. En la sección dos se carga una lista con información de las empresas que conforman el benchmark, para posteriormente seleccionar un sector y visualizar las acciones dentro del mismo de forma dinámica (con la ayuda de una gráfica en plotly). En la tercera sección se encuentran las funciones que permiten el desarrollo del código de manera ordenada, parametrizada y ajustable.  
 
 Para un buen funcionamiento del código, primero se deben importar las librerías y posteriormente correr la tercera sección del código que corresponde a las funciones. 
+
+*Nota: El ambiente de programación utilizado para este trabajo fue Jupyter Notebook.*
 
 <br>
 
@@ -78,7 +83,7 @@ Dado que las funciones son
 
 ---
 
-# **Video de apoyo** 
+# **Video de Ejemplo** 💻
 
 De forma complementaria, en youtube he subido un video en el que muestro y explico algunos ejemplos del uso que se le puede dar a este cóodigo.
 El video lo pueden consultar [aquí]()
