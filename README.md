@@ -55,17 +55,25 @@ Rendimiento en lo que val del año del S&P 500 $SPY y del Nasdaq-100 $QQQ
 # **Estrucutra del Código**   :open_file_folder:
 Este  código está compuesto por tres secciones. 
 
-Sección 1. En esta parte se puede visualizar, en una gráfica de barras horizontales, el rendimiento del mercado ([S&P 500](https://finance.yahoo.com/quote/%5EGSPC/)) junto con el comportamiento de los (11 sectores del SPDR ETFs](https://www.sectorspdrs.com/) en que se clasifican a las empresas. Sin embargo, también se puede visualizar el comportamiento de los sectores con una gráfica de líneas haciendo uso de la función correspondiente. Otra característica de esta sección es que se puede crear un mapa térmico de correlaciones de Pearson, el cual permite conocer la relación que guardan cada sector con el *benchmark*. A continuación los ejemplos.
+### Sección 1. En esta parte se puede visualizar, en una gráfica de barras horizontales, el rendimiento del mercado ([S&P 500](https://finance.yahoo.com/quote/%5EGSPC/)) junto con el comportamiento de los (11 sectores del SPDR ETFs](https://www.sectorspdrs.com/) en que se clasifican a las empresas. Sin embargo, también se puede visualizar el comportamiento de los sectores con una gráfica de líneas haciendo uso de la función correspondiente. Otra característica de esta sección es que se puede crear un mapa térmico de correlaciones de Pearson, el cual permite conocer la relación que guardan cada sector con el *benchmark*. A continuación los ejemplos.
 
-Sección 2. Aquí se empieza cargando una [tabla de información](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) de las empresas que componen al índice, para posteriormente seleccionar y filtrar las empresas de un sector y visualizar las acciones en un gráfica de líneas. La visualización de esta gráfica es dinámica ya que se utiliza la librería de plotly. Una vez se tiene identificado el sector y sus componentes, se puede calcular el Sharpe ratio y el Sortino Ratio para conocer cuánto rendimiento obtenemos por cada unidad de riesgo que asumimos, en el caso del Sharpe Ratio. Después de identificar las acciones con mayor rendimiento o con el Sharpe/Sortino Ratio más alto, podemos volver a grafica las empresas que nos interesan para hacer más un análisis más refinado. 
 
-Dentro del código agregué dos apartados extras con los que pretendía dar más ejemplos del uso que se le puede dar a las funciones. El primer exrtra es un portafolio compuesto por las empresas que conforman al grupo de las [MAG7](https://www.investing.com/academy/stocks/magnificent-seven-stocks/): Apple Inc. (AAPL), Microsoft Corp. (MSFT), Amazon.com Inc. (AMZN), Alphabet Inc. (GOOGL), NVIDIA Corp. (NVDA), Tesla Inc. (TSLA), Meta Platforms Inc. (META). Se puede ejecutar las mismas funciones anteriormente mencionadas sobre este grupo o si es cualquier otra combinación de instrumentos financieros.
 
-En el segundo procedimiento extra del código, utilizo la acción de Reddit $RDDT para ejemplificar el uso de la función que permite calcular las medias móviles: SMA y EMA. Estos indicadores técnicos son básicos para identificar las tendencias en los precios de una acción (o acciones) a lo largo del tiempo. Según sea el dato de los días en que se calculan estos valores, se agregan a la gráfica y se puede interactuar con ellos gracias a la gráfica de líneas en PLOTLY.
+### Sección 2. Aquí se empieza cargando una [tabla de información](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) de las empresas que componen al índice, para posteriormente seleccionar y filtrar las empresas de un sector y visualizar las acciones en un gráfica de líneas. La visualización de esta gráfica es dinámica ya que se utiliza la librería de plotly. Una vez se tiene identificado el sector y sus componentes, se puede calcular el Sharpe ratio y el Sortino Ratio para conocer cuánto rendimiento obtenemos por cada unidad de riesgo que asumimos, en el caso del Sharpe Ratio. Después de identificar las acciones con mayor rendimiento o con el Sharpe/Sortino Ratio más alto, podemos volver a grafica las empresas que nos interesan para hacer más un análisis más refinado. 
 
-Sección 3. En la tercera sección se encuentran las funciones que permiten el desarrollo del código de manera ordenada, parametrizada y ajustable. En orden de aparición en el código, las funciones utilizadas son las siguientes: 
 
-A) obtener_precios(inicio: str, fin: str, tickers: pd.DataFrame, with_benchmark: bool) -> pd.DataFrame:
+
+### Dentro del código agregué dos apartados extras con los que pretendía dar más ejemplos del uso que se le puede dar a las funciones. El primer exrtra es un portafolio compuesto por las empresas que conforman al grupo de las [MAG7](https://www.investing.com/academy/stocks/magnificent-seven-stocks/): Apple Inc. (AAPL), Microsoft Corp. (MSFT), Amazon.com Inc. (AMZN), Alphabet Inc. (GOOGL), NVIDIA Corp. (NVDA), Tesla Inc. (TSLA), Meta Platforms Inc. (META). Se puede ejecutar las mismas funciones anteriormente mencionadas sobre este grupo o si es cualquier otra combinación de instrumentos financieros.
+
+
+
+### En el segundo procedimiento extra del código, utilizo la acción de Reddit $RDDT para ejemplificar el uso de la función que permite calcular las medias móviles: SMA y EMA. Estos indicadores técnicos son básicos para identificar las tendencias en los precios de una acción (o acciones) a lo largo del tiempo. Según sea el dato de los días en que se calculan estos valores, se agregan a la gráfica y se puede interactuar con ellos gracias a la gráfica de líneas en PLOTLY.
+
+
+
+### Sección 3. En la tercera sección se encuentran las funciones que permiten el desarrollo del código de manera ordenada, parametrizada y ajustable. En orden de aparición en el código, las funciones utilizadas son las siguientes: 
+
+**A) obtener_precios(inicio: str, fin: str, tickers: pd.DataFrame, with_benchmark: bool) -> pd.DataFrame:**
 Esta funcion obtienen los precios de una lista de instrumentos financieros  
 
 Insumos:
@@ -86,8 +94,9 @@ Un pd.DataFrame con los precios de los instrumentos financieros seleccionados y 
 
 <br>
 
+---
 
-B) rendimiento_acumulado()
+**B) rendimiento_acumulado(tabla: pd.DataFrame) -> pd.DataFrame:**
 Esta funcion realiza las operaciones necesarias para calcular el rendimiento diario de 
 los instrumentos financieros y los suma para conocer el rendimiento acumulado 
     
@@ -99,36 +108,159 @@ Un pd.DataFrame con los precios en porcentaje
 
 <br>
 
+---
     
-C) grafica_barras_h()
+**C) grafica_barras_h(tabla: pd.DataFrame, ordenar_rendimientos: bool, descargar_img: bool, titulo: str, subtitulo: str):**
+
+Esta funcion abarca los procedimientos necesarios para mostrar una grafica de barras horizontales.
+En este caso, la grafica va a mostrar el desempeño de los sectores del S&P 500 
+    
+Insumos:
+1) tabla con el rendimiento de los sectores del S&P 500. Debe ser un pd.DataFrame
+
+2) ordenar_rendimientos. declarar si queremos la grafica ordenada de mayor a menor rendimiento. 
+Es una variable booleana.
+
+3) descargar_img. declarar si queremos descargar la grafica. Los parametros estan al final de la funcion. 
+Es una variable booleana.
+
+4) titulo. texto que se muestra como titulo de la grafica. En este espacio se puede poner la fecha 
+en que se trae los datos, como YTD, trimestral o mensual. Debe ser un dato tipo string
+
+5) subtitulo. texto que se muestra como el subtitulo de la grafica. Debe ser un dato tipo string
+        
+Resultado:
+Grafica de barras horizontales que muestra el desempeño de los sectores  del S&P 500
+
+<br>
+
+---
+    
+**D) lista_colores(tabla: pd.DataFrame) -> list:**
+
+Esta funcion complementa al proceso de creacion de la grafica de barras horizontal.
+Esta funcion determian si los rendimientos son positivos o negativos, y crea una lista de colores para mostrar en la grafica 
+    
+Insumos:
+1) tabla con el rendimiento de los sectores del S&P 500. Debe ser un pd.DataFrame
+        
+Resultado:
+Lista con el color que le corresponde a cada rendimiento. 
+
+---
 
 <br>
     
-D) lista_colores()
+**E) grafica_lineas(tabla: pd.DataFrame, descargar_img: bool, titulo: str, subtitulo: str):**
+
+Esta funcion realiza los procedimientos necesarios para mostrar una grafica de lineas
+    
+Insumos:
+1) tabla con el rendimiento de los activos financieros. Debe ser un pd.DataFrame
+
+2) descargar_img. declarar si queremos descargar la grafica. Los parametros estan al final de la funcion. 
+Es una variable booleana.
+
+3) titulo. texto que se muestra como titulo de la grafica. En este espacio se puede poner la fecha 
+en que se trae los datos, como YTD, trimestral o mensual. Debe ser un dato tipo string
+
+4) subtitulo. texto que se muestra como el subtitulo de la grafica. Debe ser un dato tipo string
+        
+Resultado:
+Grafica de lineas que muestra el desempeño de los intrumentos fiancnieros seleccionados
 
 <br>
+
+---
     
-E) grafica_lineas()
+**F) mapa_termico_correlaciones(tabla: pd.DataFrame, tipo: str):**
+
+Esta funcion realiza los procedimientos necesarios para mostrar una grafica con los coeficientes de correlacion de Pearson
+    
+Insumos:
+1) tabla con el rendimiento de los instrumentos financieros. Debe ser un pd.DataFrame
+
+2) tipo. definimos el formato del rango de colores que muestra el mapa termico. Algunas opciones son: seismic, RdBu, bwr.
+Es un dato tipo str.
+        
+Resultado:
+Grafica con el coeficiente de correlacion de Pearson de los instrumentos financieros
 
 <br>
+
+---
     
-F) mapa_termico_correlaciones()
+**G) sharpe_ratio(tabla: pd.DataFrame) -> pd.DataFrame:**
+
+Esta funcion realiza los procedimientos correspondientes para calcular el Sharpe Ratio, lo cual incluye:
+    a) rendimiento promedio diario de la muestra
+    b) desviacion estandar muestral
+    c) Sharpe Ratio al periodo y anualizado     
+    
+Insumos:
+1) tabla con el precio de los instrumentos financieros seleccionados. Debe ser un pd.DataFrame.
+        
+Resultado:
+Tabla con el resumen de los valores para cada instrumento financiero 
 
 <br>
+
+---
     
-G) sharpe_ratio()
+**H) risk_free_rate(tabla: pd.DataFrame) -> pd.Series:**
+
+Con esta funcion se obtienen el valor de los bonos del tesoro de EEUU a 10 años.
+(en yahoo el simbolo es: ^TNX) (como referencia, ver la pag de la CNBC: "U.S. 10 Year Treasury")  
+
+Para mantener el sentido de las fechas, el primer dia en que se obtiene el valor va a ser el mismo al declarado
+al usar la funcion de la tabla de precios
+
+Insumos:
+1) tabla con indice de fechas
+    
+Resultado:
+Valor de la tasa libre de riesgo promedio a la fecha indicada.
 
 <br>
+
+---
     
-H) risk_free_rate()
+**I) sortino_ratio(tabla: pd.DataFrame) -> pd.DataFrame:**
+
+Esta funcion realiza los procedimientos correspondientes para calcular el Sortino Ratio, lo cual incluye:
+    a) tasa libre de riesgo diaria
+    b) rendimiento promedio diario
+    c) rendimiento minimamente aceptable o MAR (minimum acceptable return)
+    d) rendimeinto negativo
+    e) desviacion estandar ajustado
+    f) Sharpe Ratio al periodo y anualizado     
+    
+Insumos:
+1) tabla con el precio de los instrumentos financieros seleccionados. Debe ser un pd.DataFrame.
+        
+Resultado:
+Tabla con el resumen de los valores para cada instrumento financiero 
 
 <br>
-    
-I) sortino_ratio()
 
-<br>
+---
     
-J) moving_average()
+**J) moving_average(tabla, sma: list, ema: list):**
+
+Esta funcion realiza los calculos correspondientes para graficar tanto el  
+SMA (Simple Moving Average) como el EMA (Exponential Moving Average)
+    
+Insumos:
+1) tabla con el precio de los instrumentos financieros seleccionados. Debe ser un pd.DataFrame
+        
+2) sma. Es una lista con la cantidad de dias en que calcula el SMA (ventana temporal). 
+Es una estrctura de datos tipo lista
+        
+3) ema. Es una lista con la cantidad de dias en que calcula el EMA (ventana temporal)
+Es una estrctura de datos tipo lista
+        
+Resultado:
+Tabla original junto con los datos de las medias moviles para graficar
 
 <br>
 
