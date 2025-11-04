@@ -40,6 +40,7 @@ En conclusión, esta herramienta tiene la intención de servir como un radar o m
 <br>
 
 Ejemplo de una gráfica generada con el código.
+
 Rendimiento en lo que val del año del S&P 500 $SPY y del Nasdaq-100 $QQQ
 
 <p align="center">
