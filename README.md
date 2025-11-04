@@ -61,6 +61,11 @@ Sección 1. En esta parte se puede visualizar, en una gráfica de barras horizon
 
 </p>
 
+
+<p align="center">
+  <img width="450" alt="picture1" src="https://github.com/user-attachments/assets/079102f7-8d8d-4a25-b219-f9b4e953e014" />
+
+</p>
 <br>
 
 Sección 2. Aquí se empieza cargando una [tabla de información](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) de las empresas que componen al índice, para posteriormente seleccionar y filtrar las empresas de un sector y visualizar las acciones en un gráfica de líneas. La visualización de esta gráfica es dinámica ya que se utiliza la librería de plotly. Una vez se tiene identificado el sector y sus componentes, se puede calcular el Sharpe ratio y el Sortino Ratio para conocer cuánto rendimiento obtenemos por cada unidad de riesgo que asumimos, en el caso del Sharpe Ratio. Después de identificar las acciones con mayor rendimiento o con el Sharpe/Sortino Ratio más alto, podemos volver a grafica las empresas que nos interesan para hacer más un análisis más refinado. 
