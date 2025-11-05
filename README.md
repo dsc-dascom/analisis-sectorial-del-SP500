@@ -1,4 +1,4 @@
-#  **Análisis sectorial del S&P 500** 📊
+#  **El índice S&P 500** 📊
 
   **El [índice Standard & Poor's 500 (S&P 500)](https://es.wikipedia.org/wiki/S%26P_500)**, junto con el Nasdaq y el Dow Jones, es uno de los índices bursátiles más importantes y representativos de la situación del mercado accionario de Estados Unidos. Este índice está compuesto por 500 empresas de gran capitalización que están clasificadas en [11 sectores](https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard) de acuerdo a la principal operación comercial de las empresas.
 
@@ -31,11 +31,12 @@ Dentro de estos sectores podemos encontrar algunas de las empresas más grandes 
 
 <br>
 
-Aunque una estrategia de inversión consiste en mantener una inversión diversificada, en algunas ocasiones los sectores del mercado presentan mejores oportunidades de inversión que el mercado en general, o incluso algunas acciones individuales dentro de un sector pueden llegar a representar una mejor inversión que todo el conjunto. Pero la tarea de encontrar acciones cuyos precios llegan a tener rendimientos tanto por encima o por debajo del rendimiento del mercado, se vuelve complicada al tener 500 empresas. Es por esto que comenzar con el análisis sectorial del S&P 500, puede permitir reconocer tendencias a un nivel intermedio; no general como el índice, ni particular como una acción individual. Entonces, al analizar un sector, se puede tener una mejor visión del movimiento del mercado accionario estadounidense, para posteriormente analizar el sector y ver qué acciones presentan comportamientos atípicos (*outliers*). 
+#  **Objetivo de este proyecto** 🎯
+Aunque una estrategia de inversión consiste en mantener una inversión diversificada, en algunas ocasiones los sectores del mercado representan mejores oportunidades de inversión que el mercado en general, o incluso algunas acciones individuales dentro de un sector pueden llegar a ser una mejor inversión que todo el conjunto. Pero la tarea de encontrar acciones cuyos precios llegan a tener comportamientos distintos al del mercado, se vuelve complicada al tener 500 empresas. Es por esto que comenzar con el análisis sectorial del S&P 500, se puede reconocer tendencias a un nivel intermedio; no general como el índice, ni particular como una acción individual. Entonces, al analizar un sector, se puede tener una mejor visión del movimiento del mercado accionario estadounidense, para posteriormente analizar el sector y ver qué acciones presentan comportamientos atípicos (*outliers*). 
 
 De esta forma, el presente código tiene como objetivo servir como una herramienta de análisis de los sectores del mercado, con la posibilidad de calcular tanto el rendimiento en un periodo dado de los ETF y acciones, así como calcular el [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp) y el [Sortino Ratio](https://www.investopedia.com/terms/s/sortinoratio.asp), indicadores que brindan más información de la relación riesgo-beneficio de un instrumento financiero. Además, entre las funciones del código se puede calcular las medias móviles ([SMA](https://www.investopedia.com/terms/s/sma.asp) y [EMA](https://www.investopedia.com/terms/e/ema.asp)), indicadores técnicos básicos que se utilizan para identificar tendencias y posibles señales de compra/venta. Finalmente, como complemento para el análisis sectorial, se puede graficar un [mapa térmico de correlaciones](https://www.probabilidadyestadistica.net/matriz-de-correlacion/).
 
-En conclusión, esta herramienta tiene la intención de servir como un radar o monitor del mercado accionario, que junto con algunas funciones, proporciona información sobre el comportamiento de un instrumento financiero y proporcionar información para mejorar la toma de decisiones al momento de invertir.
+En conclusión, esta herramienta tiene la intención de servir como un radar o monitor del mercado accionario, que junto con algunas funciones, proporciona información sobre el comportamiento de un instrumento financiero y da información para mejorar la toma de decisiones al momento de invertir.
 
 <br>
 
