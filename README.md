@@ -1,4 +1,4 @@
-#  **El índice S&P 500** 📊
+#  **Análisis sectorial del S&P 500** 📊
 
   **El [índice Standard & Poor's 500 (S&P 500)](https://es.wikipedia.org/wiki/S%26P_500)**, junto con el Nasdaq y el Dow Jones, es uno de los índices bursátiles más importantes y representativos de la situación del mercado accionario de Estados Unidos. Este índice está compuesto por 500 empresas de gran capitalización que están clasificadas en [11 sectores](https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard) de acuerdo a la principal operación comercial de las empresas.
 
